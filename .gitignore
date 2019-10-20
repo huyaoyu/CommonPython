@@ -1,0 +1,9 @@
+*.pyc
+*.png
+*.jpg
+*.bmp
+*.dat
+build/
+Build/
+.InstalledFiles.txt
+
