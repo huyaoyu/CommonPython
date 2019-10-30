@@ -10,5 +10,6 @@ setup(name='CommonPython',
       url='huyaoyu.com',
       packages=['CommonPython', \
             'CommonPython.Filesystem', 'CommonPython.ImageDenoise', 'CommonPython.ImageWrite', \
-            'CommonPython.ImageMisc']
+            'CommonPython.ImageMisc', \
+            'CommonPython.PointCloud']
      )
