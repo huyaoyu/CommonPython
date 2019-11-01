@@ -12,3 +12,7 @@ def get_filename_parts(fn):
     f = os.path.splitext(p[1])
 
     return [ p[0], f[0], f[1] ]
+
+def test_directory(d):
+    if ( not os.path.isdir(d) ):
+        os.makedirs(d)

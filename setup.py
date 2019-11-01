@@ -11,5 +11,6 @@ setup(name='CommonPython',
       packages=['CommonPython', \
             'CommonPython.Filesystem', 'CommonPython.ImageDenoise', 'CommonPython.ImageWrite', \
             'CommonPython.ImageMisc', \
-            'CommonPython.PointCloud']
+            'CommonPython.PointCloud', \
+            'CommonPython.Kalibr2OCV']
      )
