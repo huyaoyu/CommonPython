@@ -203,6 +203,9 @@ class StereoCalib(object):
         np.savetxt( "%s/Roi1.dat" % (d), self.Roi1, fmt="%+.12e" )
         np.savetxt( "%s/Roi2.dat" % (d), self.Roi2, fmt="%+.12e" )
 
+    def rectify_image(self, img, idx):
+        return cv2.remap( img, self.rmap[idx][0], self.rmap[idx][1], cv2.INTER_LINEAR )
+
 if __name__ == "__main__":
     print("Convert a YAML calibration file to OpenCV files.")
 
