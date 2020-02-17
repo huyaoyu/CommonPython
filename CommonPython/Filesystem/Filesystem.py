@@ -1,6 +1,5 @@
 from __future__ import print_function
 
-import argparse
 import os
 
 def get_filename_parts(fn):
