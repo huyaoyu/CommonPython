@@ -9,8 +9,9 @@ setup(name='CommonPython',
       author_email='yyhu_live@outlook.com',
       url='huyaoyu.com',
       packages=['CommonPython', \
-            'CommonPython.Filesystem', 'CommonPython.ImageDenoise', 'CommonPython.ImageWrite', \
-            'CommonPython.ImageMisc', \
+            'CommonPython.ArgumentParser', \
+            'CommonPython.Filesystem', \
+            'CommonPython.ImageDenoise', 'CommonPython.ImageWrite', 'CommonPython.ImageMisc', \
             'CommonPython.PointCloud', \
             'CommonPython.Kalibr2OCV']
      )
