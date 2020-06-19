@@ -86,6 +86,37 @@ def write_float_image_fixed_normalization(fn, img, m0, m1):
 
     return img
 
+def write_float_RGB(fn, img):
+    """
+    fn: The output filename.
+    img: A 3-channel image.
+    
+    This function first clip the input img to 0-255, then convert
+    img to uint8 type.
+
+    Only supports writing PNG image.
+    """
+
+    # Test the output directory.
+    parts = get_filename_parts(fn)
+
+    if ( not os.path.isdir(parts[0]) ):
+        os.makedirs(parts[0])
+
+    # Check the dimension of img.
+    assert (img.ndim == 3), "img.shape = {}. ".format( img.shape )
+
+    # Clip the floating point number to 0-255 before converting to uint8.
+    img = np.clip(img, 0, 255)
+
+    # Conver img to float type.
+    img = img.astype(np.uint8)
+
+    # Save the image.
+    cv2.imwrite(fn, img, [cv2.IMWRITE_PNG_COMPRESSION, 0])
+
+    return img
+
 def write_float_image_plt(fn, img):
     fig = plt.figure(dpi=300)
     ax = fig.add_subplot(111)
