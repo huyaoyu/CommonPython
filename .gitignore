@@ -6,4 +6,5 @@
 build/
 Build/
 .InstalledFiles.txt
+*.code-workspace
 
