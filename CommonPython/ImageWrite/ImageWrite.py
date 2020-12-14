@@ -30,7 +30,7 @@ def write_float_image_normalized(fn, img):
     img = np.clip(img * 255.0, 0.0, 255.0).astype(np.uint8)
 
     # Save the image.
-    cv2.imwrite(fn, img, [cv2.IMWRITE_PNG_COMPRESSION, 0])
+    cv2.imwrite(fn, img)
 
     return img
 
@@ -82,7 +82,7 @@ def write_float_image_fixed_normalization(fn, img, m0, m1):
     img = img.astype(np.uint8)
 
     # Save the image.
-    cv2.imwrite(fn, img, [cv2.IMWRITE_PNG_COMPRESSION, 0])
+    cv2.imwrite(fn, img)
 
     return img
 
@@ -113,7 +113,7 @@ def write_float_RGB(fn, img):
     img = img.astype(np.uint8)
 
     # Save the image.
-    cv2.imwrite(fn, img, [cv2.IMWRITE_PNG_COMPRESSION, 0])
+    cv2.imwrite(fn, img)
 
     return img
 
