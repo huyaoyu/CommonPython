@@ -1,13 +1,12 @@
 from __future__ import print_function
 
-import argparse
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np
 import os
 
 # CommonPython package.
-from CommonPython.Filesystem.Filesystem import get_filename_parts
+from CommonPython.Filesystem.Filesystem import get_filename_parts, test_directory_by_filename
 
 def write_float_image_normalized(fn, img):
     """
@@ -129,3 +128,9 @@ def write_float_image_plt(fn, img):
 def write_float_image_plt_clip(fn, img, m0, m1):
     write_float_image_plt( fn, np.clip( img, m0, m1 ) )
     
+def write_compressed_float(fn, img, typeStr='<u1'):
+    assert(img.ndim == 2), 'img.ndim = {}'.format(img.ndim)
+    test_directory_by_filename(fn)
+
+    dummy = np.expand_dims( img, 2 )
+    cv2.imwrite( fn, dummy.view(typeStr) )
