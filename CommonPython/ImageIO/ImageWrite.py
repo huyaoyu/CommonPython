@@ -8,6 +8,10 @@ import os
 # CommonPython package.
 from CommonPython.Filesystem.Filesystem import get_filename_parts, test_directory_by_filename
 
+def write_image(fn, img):
+    test_directory_by_filename(fn)
+    cv2.imwrite( fn, img )
+
 def write_float_image_normalized(fn, img):
     """
     fn: The output filename.
@@ -130,6 +134,11 @@ def write_float_image_plt_clip(fn, img, m0, m1):
     
 def write_compressed_float(fn, img, typeStr='<u1'):
     assert(img.ndim == 2), 'img.ndim = {}'.format(img.ndim)
+    
+    # Check if the input array is contiguous.
+    if ( not img.flags['C_CONTIGUOUS'] ):
+        img = np.ascontiguousarray(img)
+    
     test_directory_by_filename(fn)
 
     dummy = np.expand_dims( img, 2 )
